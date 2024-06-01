@@ -135,7 +135,7 @@ document.getElementById("history-btn").addEventListener("click", () => {
 });
 
 document.getElementById("battle-btn").addEventListener("click",()=>{
-    window.location.href = "/Pokedex Project/battle.html";
+    window.location.href = "/Pokedex/battle.html";
 })
 
 document.getElementById("about-btn").addEventListener("click",()=>{
