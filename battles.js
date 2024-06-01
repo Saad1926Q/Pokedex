@@ -109,7 +109,7 @@ document.getElementById("play-again-btn").addEventListener("click",()=>{
 })
 
 document.getElementById("home-btn").addEventListener("click",()=>{
-    window.location.href = "/index.html";
+    window.location.href = "/Pokedex/index.html";
 })
 
 document.getElementById("about-btn").addEventListener("click",()=>{
