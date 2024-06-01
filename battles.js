@@ -102,9 +102,15 @@ async function fetchBothPokemons(){
 
 searchBtn.addEventListener("click",()=>{
     fetchBothPokemons();
+    document.getElementById("battle-audio").play();
 });
 
 document.getElementById("play-again-btn").addEventListener("click",()=>{
+    const audio = document.getElementById("battle-audio");
+    if (!audio.paused) {
+        audio.pause();
+        audio.currentTime=0;
+    }
     replayGame();
 })
 
