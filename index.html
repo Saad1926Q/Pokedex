@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="heading-text">Pokedex</h1>
+
+    <div id="search">
+        <input type="text" id="search-bar">
+        <button class="btn" id="search-btn"><img src="pokeball.png" alt=""></button>
+    </div>
+    <div id="carousel">
+        <div id="cards-container">
+            <div class="card" id="card-1" style="display: none;">
+            </div>
+            <div class="card" id="card-2" style="display: none;">
+            </div>
+            <div class="card" id="card-3" style="display: none;">
+            </div>
+        </div>
+        <div id="btn-container">
+            <button class="btn carousel-btn" id="back-btn" style="display: none;">Back</button>
+            <button class="btn carousel-btn" id="next-btn" style="display: none;">Next</button>
+            <button class="btn carousel-btn" id="about-btn">About</button>
+            <button class="btn carousel-btn" id="history-btn">History</button>
+            <button class="btn carousel-btn" id="battle-btn">Pokemon Battle</button>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <h1 class="modal-heading"><strong>About</strong></h1>
+            <h2>
+                Welcome to the Pokédex! To view Pokémon cards, simply enter the name of a Pokémon in the search bar and click on the Pokéball button. The details of the Pokémon will be displayed on the cards. Use the 'Next' and 'Back' buttons to navigate through the cards you have viewed. Enjoy exploring the world of Pokémon!
+            </h2>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@font-face {
+    font-family: "pokemon";
+    src: url("fonts/Pokemon\ Solid.ttf");
+}
+
+@font-face {
+    font-family: "retro";
+    src: url("fonts/Retro\ Gaming.ttf");
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#heading-text{
+    font-family: "pokemon";
+    font-size: 90px;
+    margin-top: -65px;
+    margin-bottom: 0px;
+}
+
+        .card{
+    font-family: "retro";
+    margin-top: 20px;
+    margin-right: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    z-index: 1;
+}
+
+.card img{
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#cards-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button{
+    padding: 5px;
+    background-color: #fff;
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin-right: 20px;
+}
+
+button:hover{
+    background-color: #33333341;
+    cursor: pointer;
+}
+
+@media (max-width: 600px){
+    #heading-text {
+        font-size: 40px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    #cards-container {
+        flex-direction: column; 
+        align-items: center;   
+    }
+
+    .card {
+        width: 90%; 
+        margin-right: 0;
+        margin-bottom: 20px; 
+    }
+
+
+}
+
+    </style>
+</head>
+<body>
+    <h1 id="heading-text"></h1>
+    <div id="cards-container"></div>
+    <button id="home-btn">Home</button>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            let cardsHistory=JSON.parse(localStorage.getItem("cardsHistory"));
+            if(cardsHistory){
+                document.getElementById("heading-text").innerHTML="Your History"
+                const cardsContainer=document.getElementById("cards-container")
+                Object.values(cardsHistory).forEach((cardContent)=>{
+                    const cardElement=document.createElement("div");
+                    cardElement.classList.add("card");
+                    cardElement.innerHTML=cardContent;
+                    cardsContainer.appendChild(cardElement);
+                })
+            }
+            else{
+                document.getElementById("heading-text").innerHTML="Have Not Searched Yet"
+            }
+        })
+
+        document.getElementById("home-btn").addEventListener("click",()=>{
+            window.location.href = "/Pokedex Project/index.html";
+        })
+
+    </script>
+</body>
+</html>

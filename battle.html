@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+    font-family: "pokemon";
+    src: url("fonts/Pokemon\ Solid.ttf");
+}
+
+@font-face {
+    font-family: "retro";
+    src: url("fonts/Retro\ Gaming.ttf");
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#heading-text{
+    font-family: "pokemon";
+    font-size: 90px;
+    margin-top: -65px;
+    margin-bottom: 0px;
+}
+
+#search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.search-bar{
+    margin-right: 10px;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+
+.search-btn{
+    margin:0 240px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+}
+
+.search-btn img{
+    width: 50px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.card{
+    font-family: "retro";
+    margin-top: 20px;
+    margin-right: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    z-index: 1;
+}
+
+.card img{
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#card-headings{
+    display: flex;
+}
+
+#left-heading{
+    margin-right: 480px;
+}
+
+#cards-container{
+    display: flex;
+}
+
+#left-card{
+    margin-right: 415px;
+}
+
+#score-display{
+    display: flex;
+}
+
+#left-score{
+    margin-right: 614px;
+}
+
+
+#buttons-container{
+    display: flex;
+}
+
+.my-btns{
+    padding: 5px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin-right: 20px;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content{
+    font-family: "pokemon";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h1{
+    margin-top: 0;
+    font-size: 56px;
+}
+
+
+.modal-content h2{
+    font-size: 18px;
+}
+
+@media (max-width: 600px){
+
+    #heading-text {
+        font-size: 40px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    #search {
+        flex-direction: column;
+    }
+
+    .search-bar {
+        width: 80%; 
+        margin-right: 0;
+        margin-bottom: 10px; 
+    }
+
+    .search-btn {
+        margin: 10px auto;
+    }
+
+    .search-btn img {
+        width: 40px;
+    }
+
+    #card-headings {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    #left-heading, #right-heading {
+        margin-right: 0;
+    }
+
+    #cards-container {
+        flex-direction: column;
+        align-items: center;    
+    }
+
+    #left-card, #right-card {
+        margin-right: 0;
+        margin-bottom: 20px; 
+    }
+
+    #score-display {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #left-score, #right-score {
+        margin-right: 0;
+    }
+
+    #buttons-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .my-btns {
+        width: 90%; 
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding:3px;
+        max-width: none;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <h1 id="heading-text">Pokemon Battle</h1>
+    
+
+        <div id="search">
+            <input type="text" id="search-bar-1" class="search-bar">
+            <button class="btn search-btn" id="search-btn" ><img src="pokeball.png" alt=""></button>
+            <input type="text" id="search-bar-2" class="search-bar">
+        </div>
+
+    <div id="card-headings">
+        <h1 id="left-heading"  style="font-family:'pokemon' ;"></h1>
+        <h1 id="right-heading" style="font-family:'pokemon' ;"></h1>
+    </div>
+    <div id="cards-container">
+        <div id="left-card" class="card"  style="display: none;"></div>
+        <div id="right-card" class="card" style="display: none;"></div>
+    </div>
+    <div id="score-display">
+        <h1 id="left-score" style="font-family:'pokemon' ;"></h1>
+        <h1 id="right-score" style="font-family:'pokemon' ;"></h1>
+    </div>
+    <div id="final-result">
+        <h1 id="result-display" style="font-family:'pokemon' ;"></h1>
+    </div>
+    <div id="buttons-container">
+        <button class="my-btns" id="about-btn">About</button>
+        <button id="home-btn" class="my-btns" >Home</button>
+        <button id="play-again-btn" class="my-btns" style="display: none;">Play Again</button>
+    </div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <h1 class="modal-heading"><strong>About</strong></h1>
+            <h2>
+                Welcome to the Pokémon Battle Arena ! To start a battle, enter the names of two Pokémon in the search bars and click on the battle button. The stats of the Pokémon will be displayed and compared to determine the winner. Have fun battling and discovering which Pokémon comes out on top !
+            </h2>
+        </div>
+    </div>
+
+
+    <script src="battles.js"></script>
+</body>
+</html>
