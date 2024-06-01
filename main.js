@@ -131,11 +131,11 @@ document.getElementById("back-btn").addEventListener("click",()=>{
 })
 
 document.getElementById("history-btn").addEventListener("click", () => {
-    window.location.href = "/history.html";
+    window.location.href = "/Pokedex/history.html";
 });
 
 document.getElementById("battle-btn").addEventListener("click",()=>{
-    window.location.href = "/battle.html";
+    window.location.href = "/Pokedex/battle.html";
 })
 
 document.getElementById("about-btn").addEventListener("click",()=>{
